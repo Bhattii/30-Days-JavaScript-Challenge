@@ -10,14 +10,147 @@
     <script>
         // Object Creation and Access 
         // Task 1: Create an object representing a book with properties like title, author, and year, log the object to the console. 
-        const book = {
-            title: "Human",
-            authoer: "M Imran",
-            year: 2024
-        }
-        console.log(book.title);
-        console.log(book.authoer);
-        console.log(book.year);
+        // const book = {
+        //     title: "Human",
+        //     author: "M Imran",
+        //     year: 2024
+        // }
+        // console.log(book);
+
+        // Task 2: Access and log the title and author properties of the book object. 
+        // console.log(book.title);
+        // console.log(book.author);
+        // console.log(book.year);
+
+        // Object Methods 
+        // Task 3: Add a method to the book object that returns a string with the book's title and author and log the result of calling this method. 
+        // const books = {
+        //     title: "Human",
+        //     author: "M Imran",
+        //     year: 2024,
+        //     getDetails: function() {
+        //         return `${this.title} by ${this.author}`
+        //     }
+        // }
+        // console.log(books.getDetails());
+
+        // Task 4: Add a method to the book object that takes a parameter (year) and update the book's year property, then log the updated object. 
+        // const bookss = {
+        //     title: "Human",
+        //     author: "M Imran",
+        //     year: 2024,
+        //     getDetails: function() {
+        //         return `${this.title} by ${this.author}`
+        //     },
+        //     // Update Year 
+        //     updateYear: function(newYear){
+        //         return this.year=newYear;
+        //     }
+        // }
+        // bookss.updateYear(2025);
+        // console.log(bookss.year);
+
+        // Nested Object 
+        // Task 5: Create a nested objecgt representing a library with properties like name and books (an array of books object) and log the library object to the console. 
+        // const library = {
+        //     name: "City Library",
+        //     books: [
+        //         {
+        //         title: "To Kill a Mockingbird",
+        //         author: "Harper Lee",
+        //         year: 1960, 
+        //         genres: ["Fiction", "Classic", "Literature"]
+        //         },
+        //         {
+        //         title: "1984",
+        //         author: "George Orwell",
+        //         year: 1949,
+        //         genres: ["Dystopian", "Science Fiction", "Political Fiction"]
+        //         },
+        //         {
+        //         title: "Moby-Dick",
+        //         author: "Herman Melville",
+        //         year: 1851,
+        //         genres: ["Adventure", "Classic", "Literature"]
+        //         },
+        //         {
+        //         title: "The Great Gatsby",
+        //         author: "F. Scott Fitzgerald",
+        //         year: 1925,
+        //         genres: ["Fiction", "Classic", "Literature"]
+        //         }
+        //     ]
+        //     };
+
+            // Log the library object to the console
+            // console.log(library);
+
+
+            // Task 6: Access and log the name of the library and the titles of all the books in the library. 
+            // console.log(library.name);
+            // library.books.forEach(book => {
+            // console.log(book.title);
+            //  });
+
+
+
+            //  The this keyword 
+            // Task 7: Add a method to book object that use the this keyword to return a string keyword with the books title and year and log the result of calling this method. 
+            // Create the library object
+const library = {
+  name: "City Library",
+  books: [
+    {
+      title: "To Kill a Mockingbird",
+      author: "Harper Lee",
+      year: 1960,
+      genres: ["Fiction", "Classic", "Literature"],
+      getDescription: function() {
+        return `${this.title} (${this.year})`;
+      }
+    },
+    {
+      title: "1984",
+      author: "George Orwell",
+      year: 1949,
+      genres: ["Dystopian", "Science Fiction", "Political Fiction"],
+      getDescription: function() {
+        return `${this.title} (${this.year})`;
+      }
+    },
+    {
+      title: "Moby-Dick",
+      author: "Herman Melville",
+      year: 1851,
+      genres: ["Adventure", "Classic", "Literature"],
+      getDescription: function() {
+        return `${this.title} (${this.year})`;
+      }
+    },
+    {
+      title: "The Great Gatsby",
+      author: "F. Scott Fitzgerald",
+      year: 1925,
+      genres: ["Fiction", "Classic", "Literature"],
+      getDescription: function() {
+        return `${this.title} (${this.year})`;
+      }
+    }
+  ]
+};
+
+// Log the name of the library
+console.log("Library Name:", library.name);
+
+// Log the descriptions of all the books in the library
+console.log("Book Descriptions:");
+library.books.forEach(book => {
+  console.log(book.getDescription());
+});
+
+
+// Task 8: Use a for...in loop to iterat over the properties of the book object and log each property and its value. 
+
     </script>
 </body>
 </html>
