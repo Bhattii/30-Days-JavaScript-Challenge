@@ -140,16 +140,43 @@ const library = {
 };
 
 // Log the name of the library
-console.log("Library Name:", library.name);
+// console.log("Library Name:", library.name);
 
 // Log the descriptions of all the books in the library
-console.log("Book Descriptions:");
-library.books.forEach(book => {
-  console.log(book.getDescription());
-});
+// console.log("Book Descriptions:");
+// library.books.forEach(book => {
+//   console.log(book.getDescription());
+// });
 
 
 // Task 8: Use a for...in loop to iterat over the properties of the book object and log each property and its value. 
+// const book = {
+//   name: "English",
+//   writer: "Imran",
+//   year: 2024
+// }
+// for(let x in book){
+//   console.log(x + ":" + book[x]);
+// }
+
+// Task 9: Use object.keys and object.values method to log all the keys and values of the book object. 
+const book = {
+  title: "The Great Gatsby",
+  author: "F. Scott Fitzgerald",
+  year: 1925
+};
+
+// Using Object.keys()
+ const keys = Object.keys(book);
+ console.log("Keys: ");
+ keys.forEach(key => console.log(key));
+ 
+// Using Object.values()
+const values = Object.values(book);
+console.log("Values:");
+values.forEach(value => {
+  console.log(value);
+});
 
     </script>
 </body>
