@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 + Features</title>
+    <style>
+    #test{
+        width: 100px;
+        height: 5px;
+        background-color: red;
+    }
+    </style>
+</head>
+<body>
+
+
+    <script>
+
+
+
+
+
+
+
+// Template Litrals 
+// Task 1: Use Template litrals to create a string that includes variables for a person's name and age, and log the string to the console. 
+// let name = "Muhammad Imran";
+// let age = 24;
+// console.log(`My name is ${name} and my age is ${age}`);
+
+
+// Task 2: Create a multiline string using template litral and log it to console. 
+// let p = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus placeat consequatur, iste magnam nostrum at tempore cum eum, ut, quasi fugiat tenetur quisquam accusamus sequi facilis molestiae officiis voluptate laudantium?"
+// console.log(`${p}`);
+
+
+// Destructuring 
+// Task 3: Use Array Destucturing to exract the first and second elements from an array of numbers and log them to the console. 
+// const numbers = [10,20,30,40,50,60];
+// const [first, second] = numbers;
+// console.log(first);
+// console.log(second);
+
+// Task 4: Use Object Destructuring to extracts the title and author from a book object and log them to the console. 
+// const book = {
+//   title: "The Great Gatsby",
+//   author: "F. Scott Fitzgerald",
+//   year: 1925
+// };
+// const {title, author} = book;
+// console.log(title);
+// console.log(author);
+
+// Spread and Rest Operators
+// Task 5: Use the spread operator to create a new array that includes all elements of an existing array plus additional elements and log the new array to the console. 
+// const arr1 = [1,2,3];
+// const arr2 = [4,5,6];
+// const newArray = [...arr1, ...arr2];
+// console.log(newArray);
+
+// Task 6: Use the rest operator in a function to accept an arbitrary number of arguments, sum them, and return the result.
+
+// const sum = (...number)=>{
+//     return numbers.reduce((total, num)=>total+num,0);
+    
+// }
+// const result = sum(1,2,3,4,5,6);
+// console.log(result);
+
+
+// Default Parameters
+// Task 7: Write a function that takes two parameters and return thier products, with the second parameter having a default value of 1. Log the result of calling this function and without the second parameter. 
+const sum = (a, b=1 ) =>{
+    return a*b
+}
+console.log(2);
+
+
+// Enhance Object Litrals 
+// Task 8:Use enhanced object litrals to create an object with methods and properties, and log the object to console.
+const user = {
+  // Property value shorthand
+  name: 'John Doe',
+  age: 30,
+  // Method definition shorthand
+  greet() {
+    console.log(`Hello, my name is ${this.name} and I am ${this.age} years old.`);
+  },
+  // Computed property names
+  ['full' + 'Name']: 'John Doe',
+  // Method to update age
+  updateAge(newAge) {
+    this.age = newAge;
+    console.log(`My age is now updated to ${this.age}.`);
+  }
+};
+// Log the object to console
+console.log(user);
+// Calling the methods
+user.greet(); // Output: Hello, my name is John Doe and I am 30 years old.
+user.updateAge(31); // Output: My age is now updated to 31.
+// Log the object again to see updated properties
+console.log(user);
+
+
+
+// Task 9: Create an object with computed property names based variables and log the object to the console. 
+const pre = 'user';
+const suffix = 'Info';
+
+const property1 = 'name';
+const property2 = 'age';
+
+const user1 = {
+  [`${prefix}${suffix}`]: {
+    [property1]: 'Imran',
+    [property2]: 23,
+  }
+};
+
+// Log the object to console
+console.log(user1);
+
+// Accessing the properties
+console.log(user1.userInfo.name); // Output: Jane Doe
+console.log(user1.userInfo.age);  // Output: 28
+
+    </script>
+
+
+</body>
+</html>
