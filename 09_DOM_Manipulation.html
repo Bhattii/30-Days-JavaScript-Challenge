@@ -6,17 +6,98 @@
     <title>DOM Manipulation</title>
 </head>
 <body>
-    <!-- <div id="main"></div> -->
+    <div id="main"></div>
 
   <div class="main">Hello</div>
+
+ <ul id="parent">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+ </ul>
+
+
+ <h2>Hi, I am heading 2. enter the mouse and note the border color.</h2>
+
+ <a href="https://www.youtube.com/" target="_blank">youtube</a>
 
     <script>
         // Selecting and Manipulating Elements 
         // Task 1: Select an HTML element by its ID and change its text content. 
-        // document.getElementById("main").innerText = "Muhammad Imran";
+        document.getElementById("main").innerText = "Muhammad Imran";
 
         // Task  2: Select an HTML element by its Class and change its background color. 
      document.getElementsByClassName('main')[0].style.backgroundColor = "red";
+
+
+    //   Creating and Appending Elements 
+    //  Task 3: Create a new div element with some text content and append it to the body. 
+   let newDiv = document.createElement("div");
+   newDiv.textContent="This is new div element";
+   document.body.appendChild(newDiv);
+
+
+//    Task 4: Create a new li element and add it to an existing ul list. 
+       let newLi = document.createElement("li");
+       newLi.textContent = "Hi, I am li";
+       let newUl = document.createElement('ul');
+     let ul =  newUl.appendChild(newLi);
+     document.body.appendChild(ul);
+
+    //  Removing Elements 
+    // Task 5: Select an HTML element and remove it from the DOM.
+    let selectElement = document.querySelector("#main");
+    if(selectElement){
+      selectElement.remove();
+    }
+    
+
+    // Task 6: Remove the last child of a specific HTML element. 
+    let parent = document.querySelector("#parent");      
+        if (parent && parent.lastChild) {
+            parent.removeChild(parent.lastChild);
+        } else {
+            console.log("Parent element does not exist or has no children to remove.");
+        }
+
+    //  Modifying Attributes and Classes 
+    // Task 7: Select an HTML element and change one of its attribute (e.g., src of an img tag).
+// let target = document.querySelector("a");
+// target.textContent="Facebook";
+// target.href = "https://web.facebook.com/";
+
+
+// Task 8: Add and remove a CSS class to/form an HTML element. 
+let par = document.getElementById("parent");
+par.classList.add("child");
+par.classList.remove("child");
+
+
+// Event Handling 
+// Task 9: Add a click event listener to a button that changes the text content of a paragraph. 
+let button = document.createElement("button");
+button.append("Click Me");
+ document.body.append(button);
+
+ let paragraph = document.createElement("p");
+ let paragraphElement= paragraph.innerText = "Hi, I am paragraph 1.";
+//  paragraph.append("Hi, I am paragraph");
+ document.body.append(paragraph);
+
+ button.addEventListener('click', ()=> {paragraph.innerText = "Hi, I am paragraph 2."})
+
+
+
+//  Task 10: Add a mouseover event listener to an element that changes its border color. 
+let heading = document.querySelector("h2");
+heading.style.border = "2px solid red";
+
+heading.addEventListener('mouseover', ()=>{
+  heading.style.borderColor = "green";
+})
+
+
 
     </script>
 </body>
