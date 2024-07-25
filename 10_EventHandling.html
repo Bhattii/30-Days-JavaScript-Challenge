@@ -63,9 +63,28 @@
         })
 
         // Keyboard Events 
-        // Task 5: Add a keydown event listener to an input field that logs the key pressed to the console. 
-        
+        // Task 5: Add a keydown event listener to an input field that logs the key pressed to the console.
+        // Creating input field  
+        let label = document.createElement("label");
+        label.innerText = "Press any key to input: ";
+        label.setAttribute("for","name");
+        document.body.append(label);
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("id", "name");
+        document.body.append(input);
 
+        let h3 = document.createElement("p");
+        document.body.append(h3);
+        
+        input.addEventListener('keydown', (event)=>{
+            let key =input.value;
+            h3.innerHTML = "Key Press Value: "+ "<br>" + "<b>"+event.key + "</b>";
+            console.log(event.key);
+        })
+
+
+        // Task 6: 
     </script>
 </body>
 </html>
