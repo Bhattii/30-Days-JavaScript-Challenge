@@ -74,17 +74,62 @@
         input.setAttribute("id", "name");
         document.body.append(input);
 
-        let h3 = document.createElement("p");
-        document.body.append(h3);
+       
         
         input.addEventListener('keydown', (event)=>{
             let key =input.value;
-            h3.innerHTML = "Key Press Value: "+ "<br>" + "<b>"+event.key + "</b>";
             console.log(event.key);
         })
 
 
-        // Task 6: 
+        // Task 6: Add a keyup event listener to an input field that display the current value in paragraph.
+           let para = document.createElement("p");
+           document.body.append(para);
+
+           input.addEventListener('keyup', (event)=>{
+            let key =input.value;
+            para.innerHTML = "Key Press Value: "+ "<br>" + "<b>"+event.key + "</b>";
+           });
+           
+
+        //    Form Events 
+        //    Task 7: Add a submit event listener to a form that prevents the default submission and log the form data to the console. 
+        let form = document.createElement("form");
+        document.body.append(form);
+
+        label1 = document.createElement("label");
+        label1.innerText = "Name: ";
+        label1.setAttribute("for","name");
+        form.append(label1);
+
+        let input1 = document.createElement("input");
+        input1.setAttribute("type", "text");
+        input1.setAttribute("id", "name");
+        form.append(input1);
+
+        let button1 = document.createElement("button");
+        button1.setAttribute("type","submit");
+        button1.innerHTML = "Submit";
+        form.append(button1);
+        
+        form.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        let formData = new FormData(form); // Capitalize 'FormData'
+        let formObj = {};
+        formData.forEach((value, key) => {
+        formObj[key] = value;
+         
+        });
+        console.log(formObj); // Log formObj to see the form data as an object
+        });
+
+
+
+        // Task 8: Add a change event listener to a select dropdown that displays the selected value in paragraph. 
+        
+
+
     </script>
 </body>
 </html>
