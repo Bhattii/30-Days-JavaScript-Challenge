@@ -46,6 +46,7 @@
 
         // Mouse Events 
         // Task 3: Add a mouseover event listener to an element that changes its background color. 
+
         let p = document.createElement('p');
         p.innerText = "Mouse over and see the background color.";
         p.style.backgroundColor = "red";
@@ -58,12 +59,14 @@
         })
 
         // Task 4: Add a mouseout event listener to an element that reset its background color. 
+
         p.addEventListener('mouseout',()=>{
            p.style.backgroundColor = 'red';
         })
 
         // Keyboard Events 
         // Task 5: Add a keydown event listener to an input field that logs the key pressed to the console.
+
         // Creating input field  
         let label = document.createElement("label");
         label.innerText = "Press any key to input: ";
@@ -83,6 +86,7 @@
 
 
         // Task 6: Add a keyup event listener to an input field that display the current value in paragraph.
+
            let para = document.createElement("p");
            document.body.append(para);
 
@@ -94,6 +98,7 @@
 
         //    Form Events 
         //    Task 7: Add a submit event listener to a form that prevents the default submission and log the form data to the console. 
+
         let form = document.createElement("form");
         document.body.append(form);
 
@@ -127,7 +132,71 @@
 
 
         // Task 8: Add a change event listener to a select dropdown that displays the selected value in paragraph. 
+
+        let h1 = document.createElement('h1')
+        h1.innerText = "Selected Dropdown";
+        body = document.body;
+        body.append(h1);
         
+        let label2 = document.createElement("label");
+        label2.setAttribute("for","mySelect");
+        label2.innerHTML= "Choose an Option :";
+        body.append(label2);
+
+        let select = document.createElement("select");
+        select.setAttribute("id", "mySelect");
+        body.append(select);
+
+        let option1 = document.createElement("option")
+        option1.innerHTML="Value 1";
+        option1.setAttribute("value","value 1");
+        select.append(option1);
+
+        let option2 = document.createElement("option")
+         option2.innerHTML="Value 2";
+        option2.setAttribute("value","value 2");
+        select.append(option2);
+
+        let option3 = document.createElement("option")
+         option3.innerHTML="Value 3";
+        option3.setAttribute("value","value 3");
+        select.append(option3);
+
+        let paragrh = document.createElement("p");
+        paragrh.innerHTML = "Selected value will be displayed here.";
+        body.append(paragrh);
+ 
+        select.addEventListener('change', ()=>{
+            let selectedValue = select.value;
+            paragrh.innerHTML= selectedValue;;
+        });
+
+
+
+        // Event Delegation 
+        // Task 9 : Add a click event listener to a list that logs the text content of the clicked list using event Delegation. 
+        
+        // Create and append the h1 element
+        const heading = document.createElement("h1");
+        heading.textContent = "Event Delegation";
+        body.appendChild(heading);
+
+        // Create and append the ul element
+        const ul = document.createElement("ul");
+        body.appendChild(ul);
+ 
+        // List of items to add to the ul
+        const items = ['Item1','Item2','Item3','Item4',];
+
+        // Create and append the li elements
+        items.forEach(item=>{
+            const li = document.createElement("li");
+            li.textContent = item;
+            ul.appendChild(li);
+        })
+
+
+
 
 
     </script>
