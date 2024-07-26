@@ -189,11 +189,18 @@
         const items = ['Item1','Item2','Item3','Item4',];
 
         // Create and append the li elements
+       
         items.forEach(item=>{
             const li = document.createElement("li");
             li.textContent = item;
             ul.appendChild(li);
         });
+
+        ul.addEventListener('click', (event)=>{
+            if(event.target && event.target.nodeName == "LI"){
+            console.log(event.target.textContent);
+            }
+        })
 
 
 
