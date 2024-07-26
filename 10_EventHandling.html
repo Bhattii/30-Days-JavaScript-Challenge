@@ -200,7 +200,26 @@
             if(event.target && event.target.nodeName == "LI"){
             console.log(event.target.textContent);
             }
-        })
+        });
+
+
+
+        // Task 10: Add an event listener to a parent element that list for event from dynamically added child element. 
+        const button2 = document.createElement("button");
+        button2.textContent = "Add Item";
+        body.appendChild(button2);
+         
+        // Function to add a new item to the list
+        button2.addEventListener('click', ()=>{
+            const newLi = document.createElement("li");
+            newLi.textContent = "New Item Added";
+            ul.append(newLi);
+        });
+
+        // Event delegation: Add a click event listener to the parent element.
+        // Check event delegation in task 9. 
+
+
 
 
 
