@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+</head>
+<body>
+    <script>
+        let h1 = document.createElement("h1");
+        h1.textContent="Classes in JavaScript";
+        let body = document.body;
+        body.appendChild(h1);
+
+
+// Class Defination 
+// Task 1 : Define a class Person with properties name and age, and a method to return a greeting message. Create an instance of the class and log the greeting message. 
+         class Person {
+            constructor(name,age){
+                this.name = name;
+                this.age = age;
+            }
+            greeting(){
+              
+                document.write(`<h1>Person Class</h1>
+                My name is ${this.name} and I am ${this.age} years old.`);
+            }
+         }
+         
+         // Create an instance of the Person class
+         const a = new Person("Muhammad Imran", 23);
+         a.greeting();
+
+    </script>
+</body>
+</html>
