@@ -159,13 +159,18 @@
                     constructor(fname,lname){
                         this.fname = fname;
                         this.lname = lname;
-                        this.fullName;
-                        
-                        
                     }
+                     // Getter method for full name
+                     get fullName(){
+                        return `${this.fname} ${this.lname}`
+                     }
                 }
+                // Create an instance of the Person class
+                const p = new Person2("Muhammad","Imran");
+                console.log(p.fullName);
 
                     
+
 
 
 
