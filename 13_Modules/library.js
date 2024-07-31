@@ -24,4 +24,34 @@ export { person }
 
 // Named and Default Export
 // Task 3: Create a module that export multiple function using named export. import and use these functions in another Script.
+// mathFunctions.js
 
+// Function to add two numbers
+export function Add(a, b) {
+  return a + b;
+}
+
+// Function to subtract two numbers
+export function subtract(a, b) {
+  return a - b;
+}
+
+// Function to multiply two numbers
+export function multiply(a, b) {
+  return a * b;
+}
+
+// Function to divide two numbers
+export function divide(a, b) {
+  if (b === 0) {
+    throw new Error("Division by zero is not allowed.");
+  }
+  return a / b;
+}
+
+// Task 4
+function Greet(name) {
+  return `Hello, ${name}! Welcome!`;
+}
+
+export default Greet;
