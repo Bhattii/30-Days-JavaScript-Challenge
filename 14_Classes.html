@@ -213,8 +213,74 @@
                     person.updateName("Jane", "Smith");
                     person.logFullName(); // Output: Full Name: Jane Smith
 
+// Private field (Optional)
+// Task 9: Define a class Account with private fields for balance and adda method to deposit and withdraw money. Ensure that the balance can only be updated through these methods. 
+                  
+                    class Account {
+                       #balance;
 
+                    constructor(initialBalance) {
+                        this.#balance = initialBalance;
+                    }
 
+                    // Method to deposit money
+                    deposit(amount) {
+                        if (amount > 0) {
+                        this.#balance += amount;
+                        console.log(`Deposited: $${amount}. New Balance: $${this.#balance}`);
+                        } else {
+                        console.log("Deposit amount must be positive.");
+                        }
+                    }
+
+                    // Method to withdraw money
+                    withdraw(amount) {
+                        if (amount > 0 && amount <= this.#balance) {
+                        this.#balance -= amount;
+                        console.log(`Withdrew: $${amount}. New Balance: $${this.#balance}`);
+                        } else if (amount > this.#balance) {
+                        console.log("Insufficient balance.");
+                        } else {
+                        console.log("Withdrawal amount must be positive.");
+                        }
+                    }
+
+                    // Method to get the current balance
+                    getBalance() {
+                        return this.#balance;
+                    }
+                    }
+
+                    // Example usage:
+                    // const account = new Account(1000);
+                    // console.log(`Initial Balance: $${account.getBalance()}`); // Output: Initial Balance: $1000
+
+                    // account.deposit(500); // Output: Deposited: $500. New Balance: $1500
+                    // account.withdraw(200); // Output: Withdrew: $200. New Balance: $1300
+                    // console.log(`Current Balance: $${account.getBalance()}`); // Output: Current Balance: $1300
+
+// Task 10: Create an instance of the Account class and test the deposit and withdraw methods, logging the balance after each operation. 
+                    // Create an instance of the Account class with an initial balance of $1000
+                    const account = new Account(1000);
+
+                    // Log the initial balance
+                    console.log(`Initial Balance: $${account.getBalance()}`);
+
+                    // Deposit $500
+                    account.deposit(500); // Expected output: Deposited: $500. New Balance: $1500
+                    console.log(`Balance after deposit: $${account.getBalance()}`); // Expected output: Balance after deposit: $1500
+
+                    // Withdraw $200
+                    account.withdraw(200); // Expected output: Withdrew: $200. New Balance: $1300
+                    console.log(`Balance after withdrawal: $${account.getBalance()}`); // Expected output: Balance after withdrawal: $1300
+
+                    // Attempt to withdraw $1500 (more than the current balance)
+                    account.withdraw(1500); // Expected output: Insufficient balance.
+                    console.log(`Balance after failed withdrawal: $${account.getBalance()}`); // Expected output: Balance after failed withdrawal: $1300
+
+                    // Deposit $300
+                    account.deposit(300); // Expected output: Deposited: $300. New Balance: $1600
+                    console.log(`Balance after another deposit: $${account.getBalance()}`); // Expected output: Balance after another deposit: $1600
 
 
 
