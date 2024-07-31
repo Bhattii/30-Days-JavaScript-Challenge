@@ -110,20 +110,20 @@
 
 // static Method and Properties 
 // Task 5: Add a static method to the Person class that returns a generic greeting message. Call this static method without creating an instance of the class and log the message. 
-                class Person1{
-                    constructor(name,age){
-                        this.name = name;
-                        this.age = age;
-                    }
+                // class Person1{
+                //     constructor(name,age){
+                //         this.name = name;
+                //         this.age = age;
+                //     }
 
-                    getGreeting() {
-                       return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
-                   }
+                //     getGreeting() {
+                //        return `Hello, my name is ${this.name} and I am ${this.age} years old.`;
+                //    }
 
-                     static getGenericGreeting() {
-                       return "Hello, welcome to the Person class!";
-                  }
-                };
+                //      static getGenericGreeting() {
+                //        return "Hello, welcome to the Person class!";
+                //   }
+                // };
 
                 // console.log(Person1.getGenericGreeting());
 
@@ -131,46 +131,87 @@
 
 // Task 6: Add a static property to the student class to keep track of number of the students  created. Increment this property in the constructor and log the total number of student. 
 
-                class Student extends Person1 {
-                    static studentCount = 0; // Static property to keep track of the number of students
+                // class Student extends Person1 {
+                //     static studentCount = 0; // Static property to keep track of the number of students
 
-                    constructor(name, age, studentId) {
-                        super(name, age);
-                        this.studentId = studentId;
-                        Student.studentCount++; // Increment the student count
-                    }
+                //     constructor(name, age, studentId) {
+                //         super(name, age);
+                //         this.studentId = studentId;
+                //         Student.studentCount++; // Increment the student count
+                //     }
 
-                       static getStudentCount(){
-                    return `total number of students: ${this.studentCount}`;
-                    }
-                }
+                //        static getStudentCount(){
+                //     return `total number of students: ${this.studentCount}`;
+                //     }
+                // }
 
-                const student2 = new Student('Bob', 20, 'S12345');
-                const student3 = new Student('Alice', 22, 'S12346')
+                // const student2 = new Student('Bob', 20, 'S12345');
+                // const student3 = new Student('Alice', 22, 'S12346')
                 
-                console.log(Student.getStudentCount());
+                // console.log(Student.getStudentCount());
 
 
                 
 // Getter and Setter 
 // Task 7: Add a getter method to the person class to return the full name ( assum a firstName and lastName property ). Create an instance and log the full name using the getter. 
 
-                class Person2{
-                    constructor(fname,lname){
-                        this.fname = fname;
-                        this.lname = lname;
-                    }
-                     // Getter method for full name
-                     get fullName(){
-                        return `${this.fname} ${this.lname}`
-                     }
-                }
-                // Create an instance of the Person class
-                const p = new Person2("Muhammad","Imran");
-                console.log(p.fullName);
+                // class Person2{
+                //     constructor(fname,lname){
+                //         this.fname = fname;
+                //         this.lname = lname;
+                //     }
+                //      // Getter method for full name
+                //      get fullName(){
+                //         return `${this.fname} ${this.lname}`
+                //      }
+                // }
+                // // Create an instance of the Person class
+                // const p = new Person2("Muhammad","Imran");
+                // console.log(p.fullName);
 
                     
+// Task 8: Add a setter method to the person class to update the name properties (fname and lname). Update the name using the setter and log the updated full name. 
+   
+                   class Person {
+                    constructor(fname, lname) {
+                        this._fname = fname;
+                        this._lname = lname;
+                    }
 
+                    // Getter for full name
+                    get fullName() {
+                        return `${this._fname} ${this._lname}`;
+                    }
+
+                    // Setter for first name
+                    set fname(newFname) {
+                        this._fname = newFname;
+                    }
+
+                    // Setter for last name
+                    set lname(newLname) {
+                        this._lname = newLname;
+                    }
+
+                    // Method to update both first and last names
+                    updateName(newFname, newLname) {
+                        this.fname = newFname;
+                        this.lname = newLname;
+                    }
+
+                    // Method to log the full name
+                    logFullName() {
+                        console.log(`Full Name: ${this.fullName}`);
+                    }
+                    }
+
+                    // Example usage:
+                    const person = new Person("John", "Doe");
+                    person.logFullName(); // Output: Full Name: John Doe
+
+                    // Update name using the setter
+                    person.updateName("Jane", "Smith");
+                    person.logFullName(); // Output: Full Name: Jane Smith
 
 
 
