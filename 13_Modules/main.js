@@ -61,4 +61,9 @@ axios.get('https://jsonplaceholder.typicode.com/users')
     })
     .catch(error => {
     console.error('Error fetching users:', error);
-})
+    })
+
+
+
+// Module Bundling (Optional)
+// Task 8: Use a module bundler like Webpack or Parcel to bundle multiple javascript files into a single file. Write a script to demonstrate the bundling process. 
