@@ -55,3 +55,23 @@ function Greet(name) {
 }
 
 export default Greet;
+
+
+// Importing Entire Modules
+// Task 5: Create a module that export multiple constants and functions. Import the entire module as an object in another script and use its properties. 
+// Constants
+export const PI = 3.14159;
+export const E = 2.71828;
+
+// Functions
+export function calculateCircumference(radius) {
+  return 2 * PI * radius;
+}
+
+export function calculateArea(radius) {
+  return PI * radius * radius;
+}
+
+export function exponential(number) {
+  return Math.pow(E, number);
+}

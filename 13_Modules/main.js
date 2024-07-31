@@ -27,4 +27,17 @@ import Greet from "./library.js"; // Import the default export from greet.js
 const userName = "Muhammad Imran";
 console.log(Greet(userName));
 
+// Task 5:
+
+import * as utilities from './library.js'; // Import the entire module as an object
+
+// Using the imported module's properties
+const radius = 5;
+console.log(`Circumference: ${utilities.calculateCircumference(radius)}`); // Output: Circumference: 31.4159
+console.log(`Area: ${utilities.calculateArea(radius)}`); // Output: Area: 78.53975
+console.log(`Exponential of 2: ${utilities.exponential(2)}`); // Output: Exponential of 2: 7.389056
+console.log(`Value of PI: ${utilities.PI}`); // Output: Value of PI: 3.14159
+console.log(`Value of E: ${utilities.E}`); // Output: Value of E: 2.71828
+
+
 
